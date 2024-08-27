@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+</head>
+<body>
+    <div>
+        <h1>Welcome to Your Travel Planner</h1>
+        <p>Plan your perfect trip with ease and convenience.</p>
+</div>
+
+<div class="main-div">
+<div class="form-div">
+<form onsubmit="return Client.handleSubmit(event)">
+<div>
+      <label for="city">City</label>
+<input type="text" name="city" id="city">  
+</div>
+<div>
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date">
+</div>
+
+<button>Submit</button>
+</form>
+
+</div>
+<!-- ============ output============= -->
+<div class="flight_data ">
+    <h3 id="Rdays"></h3>
+    <p class="NameOfCity"></p>
+    <p class="temperature"></p>
+    <p class="max-temperature"></p>
+    <p class="min-temperature"></p>
+    <p class="weatherOfCity"></p>
+    <div class="cityImg"></div>
+  </div>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
