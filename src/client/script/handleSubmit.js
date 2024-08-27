@@ -2,20 +2,21 @@ import axios from 'axios';
 import { getRdays } from './getRdays';
 import Swal from 'sweetalert2';
 
+// Select form and input elements from the DOM
 
 const form = document.querySelector('form');
 const cityInput = document.querySelector("#city");
 const dateInput = document.getElementById('date');
 
+// Handle form submission
 const handleSubmit = async (e) => {
-
     e.preventDefault();
     const Location = await getCity();
 
-    // Clear previous data if inputs are empty
+      // Validate inputs
     if (cityInput.value === "") {
-        clearUI();
-        Swal.fire("Please Choose a City Name.");
+        clearUI();// Clear the UI if city is not provided
+        Swal.fire("Please Choose a City Name.");// Show an error alert
         return false;
     } else if(Location.error){
         clearUI();
@@ -44,18 +45,14 @@ const handleSubmit = async (e) => {
     }
 
 
-
-    // Proceed with form submission or further processing
-   
     const { name, lng, lat } = Location;
     const date = dateInput.value;
     const Rdays = getRdays(date);
 
-
-
-
+  // Fetch weather data
     const Weather = await getWeather(lng, lat, Rdays);
    
+    // Handle weather data errors
     if(Weather.error){
         dateInput.value = ""; // Clear the date input
         clearUI();
@@ -68,10 +65,12 @@ const handleSubmit = async (e) => {
         Swal.fire("The Date Can't Have Past");
         return false;
     }
+     // Fetch city image
     const image = await getCityImg(name);
     updateUI(Rdays, name, image.img, Weather);
 };
 
+// Function to clear the UI elements
 const clearUI = () => {
     document.querySelector("#Rdays").innerHTML = "";
     document.querySelector(".NameOfCity").innerHTML = "";
@@ -83,6 +82,7 @@ const clearUI = () => {
     document.querySelector(".flight_data").style.display = "none";
 };
 
+// Function to get city information from the server
 const getCity = async () => {
     const { data } = await axios.post("http://localhost:8000/getCity", form, {
         headers: {
@@ -100,6 +100,7 @@ const getCity = async () => {
 //     return Rdays;
 // };
 
+// Function to get weather information from the server
 const getWeather = async (lng, lat, Rdays) => {
     const { data } = await axios.post("http://localhost:8000/getWeather", {
         lng,
@@ -109,11 +110,13 @@ const getWeather = async (lng, lat, Rdays) => {
     return data;
 };
 
+// Function to get an image of the city from the server
 const getCityImg = async (name) => {
     const { data } = await axios.post("http://localhost:8000/getImg", { name });
     return data;
 };
 
+// Function to update the UI with weather and city information
 const updateUI = (Rdays, city, image, weather) => {
     document.querySelector("#Rdays").innerHTML = `Your journey begins in just ${Rdays} days - get ready for an exciting adventure!`;
     document.querySelector(".NameOfCity").innerHTML = `Location: ${city}`;
