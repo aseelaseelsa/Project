@@ -10,7 +10,6 @@
 - [Getting Started](#getting_started)
 - [Test](#test)
 - [Deployment](#deployment)
-- [Authors](#authors)
 
 ##  About <a name = "about"></a>
 
@@ -20,17 +19,15 @@ Here’s an overview of the web development process for the Udacity Travel App p
 
 2. **Front-end Development:** This stage focuses on building the visual and interactive aspects of the application using HTML, CSS, and JavaScript. It involves developing the layout, styling, and user interface, as well as integrating any necessary third-party libraries or frameworks.
 
-3. **Back-end Development:** The back-end phase centers on constructing the server-side components and logic. This includes implementing business logic, managing data, and handling user requests using server-side technologies like Node.js, Django, or Ruby on Rails, along with databases such as MySQL or PostgreSQL.
+3. **Back-end Development:** The back-end phase centers on constructing the server-side components and logic. 
 
 4. **APIs and Data Integration:** To provide users with travel-related information, the app integrates various APIs. These APIs enable the application to retrieve data from external sources, such as travel agencies, weather services, and mapping services, offering real-time updates on flight details, hotel availability, weather forecasts, and points of interest.
 
-5. **User Authentication and Security:** Implementing user authentication and security measures is crucial. This involves features like user registration, login, and password management, along with security practices such as encryption, HTTPS, and input validation to safeguard user data.
+5. **Testing and Debugging:** Testing and debugging are vital to ensure the application functions correctly. This phase includes unit testing, integration testing, and user acceptance testing to identify and resolve any issues.
 
-6. **Testing and Debugging:** Testing and debugging are vital to ensure the application functions correctly. This phase includes unit testing, integration testing, and user acceptance testing to identify and resolve any issues.
+6. **Deployment:** After development and testing, the application is prepared for deployment. This involves setting up servers, databases, and domain names, and then launching the application in a production environment for user access.
 
-7. **Deployment:** After development and testing, the application is prepared for deployment. This involves setting up servers, databases, and domain names, and then launching the application in a production environment for user access.
-
-8. **Maintenance and Updates:** Post-deployment, ongoing maintenance and updates are necessary. This includes monitoring performance, addressing user-reported issues, and implementing new features or improvements based on feedback.
+7. **Maintenance and Updates:** Post-deployment, ongoing maintenance and updates are necessary. This includes monitoring performance, addressing user-reported issues, and implementing new features or improvements based on feedback.
 
 ##  Getting Started <a name = "getting_started"></a>
 These instructions will help you set up a copy of the project on your local machine for development and testing. For information on deploying the project to a live system, refer to the [deployment](#deployment) section.
