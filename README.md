@@ -48,7 +48,7 @@ These instructions will help you set up a copy of the project on your local mach
 ### Installing
 
 you need the following:
-npm install ----> to install all the required dependencies
+npm install --save dev or npm install ----------> to install all the required dependencies
 notice: you may still need to download the nodeomon as a dependency
 
 make your env file with new names and add them to the server with the new names
@@ -57,7 +57,7 @@ make your env file with new names and add them to the server with the new names
 to get the keys like username and weatherbit key you need to create them yourself and add them with different names
 to the env file and still make the changes based on that
 
-
+note : my Node.js version is  ---->   v18.16.1
 ## Running the tests <a name = "tests"></a>
 
 npm run test will run jest in the terminal and get you the results
